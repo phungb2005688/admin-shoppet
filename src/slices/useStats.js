@@ -368,7 +368,7 @@ const TotalRevenue = () => {
             <Card.Text className='text-black'>
               <div className='card-stats'>
                 <h5 className='text-uppercase'>Tổng doanh thu </h5>{' '}
-                <b>{totalRevenue.toLocaleString('vi-VN')} VNĐ</b>
+                <b>{totalRevenue ? totalRevenue.toLocaleString('vi-VN') : '0'} VNĐ</b>
               </div>
             </Card.Text>{' '}
             <span>*Không tính những đơn hàng chưa thanh toán</span>
