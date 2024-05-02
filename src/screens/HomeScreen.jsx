@@ -239,7 +239,7 @@ const HomeScreen = () => {
         {' '}
         <MyChartComponent data={growthData} />
       </div>
-{/* 
+
       <Container>
         <h3 className='text-black pt-3 text-uppercase'>Đơn hàng gần đây</h3>
         {isLoadingOrder ? (
@@ -308,7 +308,7 @@ const HomeScreen = () => {
             </tbody>
           </Table>
         )}
-      </Container> */}
+      </Container>
 
       {/* <div>
       <MonthlyRevenueChart />
