@@ -14,10 +14,14 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setCredentials: (state, action) => {
-      state.userInfo = action.payload.user;
-      state.token = action.payload.token; // Lưu trữ token
-      localStorage.setItem('userInfo', JSON.stringify(action.payload.user));
-      localStorage.setItem('token', action.payload.token); // Lưu trữ token vào localStorage
+      if (action.payload.user && action.payload.token) {
+        state.userInfo = action.payload.user;
+        state.token = action.payload.token;
+        localStorage.setItem('userInfo', JSON.stringify(action.payload.user));
+        localStorage.setItem('token', action.payload.token);
+      } else {
+        console.error('Invalid user data or token:', action.payload);
+      }
     },
     logout: (state, action) => {
       state.userInfo = null;
