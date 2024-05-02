@@ -8,7 +8,8 @@ const MyChartComponent = ({ data }) => {
     const chartInstanceRef = useRef(null);
 
     useEffect(() => {
-        if (!data || data.length === 0) return; // Bỏ qua nếu không có dữ liệu
+       // Đảm bảo data là một mảng và có phần tử
+       if (!Array.isArray(data) || data.length === 0) return;
 
         const ctx = canvasRef.current.getContext('2d');
 
